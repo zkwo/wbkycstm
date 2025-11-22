@@ -2,12 +2,17 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-// Import CSS global yang akan kita buat di file terpisah (style.css)
 import './style.css'; 
 
-// --- 1. THEME CONTEXT PALING SEDERHANA ---
+// --- BAGIAN CONTEXT API (HARUS DIEKSPOR) ---
+
+// 1. Definisikan Context dan Export
 export const ThemeContext = createContext();
 
+// 2. Custom Hook (HARUS DIEKSPOR AGAR BISA DIIMPOR OLEH App.jsx)
+export const useTheme = () => useContext(ThemeContext);
+
+// 3. Theme Provider
 const ThemeProvider = ({ children }) => {
     // Default: dark
     const [theme, setTheme] = useState(() => {
@@ -38,6 +43,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </ThemeProvider>
   </React.StrictMode>,
 );
-
-// Export custom hook agar bisa digunakan di App.jsx
-export const useTheme = () => useContext(ThemeContext);
