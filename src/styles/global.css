@@ -1,0 +1,56 @@
+/* src/styles/global.css */
+
+/* --- Variabel Warna Global (Default: Dark Mode) --- */
+:root {
+    --primary-color: #ff3366; /* Merah Muda Aksen */
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --secondary-bg: #1e1e1e;
+    --border-color: rgba(255, 255, 255, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* LIGHT MODE */
+.light {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --secondary-bg: #f4f4f4;
+    --border-color: rgba(0, 0, 0, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Global Reset dan Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+h1, h2, h3 {
+    color: var(--text-color);
+    margin-bottom: 0.5em;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
